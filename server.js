@@ -11,4 +11,4 @@
         return '$KIPYO,' + id + ',SENTENCE' + i;
     }
 
-    sample.init();
+    sample.init(client);
