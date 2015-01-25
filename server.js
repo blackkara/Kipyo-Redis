@@ -29,7 +29,7 @@
     };
     
     
-    client.hget('Device003', function(err, result){
+    client.hget('realtime', 'Device003', function(err, result){
         if(err) throw err;
         console.log(result);
     });
