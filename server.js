@@ -8,7 +8,7 @@
 
     var i = 0;
     function dummySentence(id){
-        return '$KIPYO,' + id + ',SENTENCE' + i;
+        return '$KIPYO,' + id + ',SENTENCE' + (++i);
     }
 
     sample.init(client);
@@ -17,4 +17,4 @@
     setInterval(function(){
         sample.update(id, dummySentence(id));
         console.log(id + ' UPDATED');
-    }, 3000);
+    }, 1000);
