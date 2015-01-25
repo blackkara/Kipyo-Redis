@@ -29,8 +29,8 @@
     };
 
 
-    client.hset('realtime', 'Device001', JSON.stringify(Device001));
-    client.hset('realtime', 'Device002', JSON.stringify(Device002));
+    client.hset('realtime', 'Device001', JSON.stringify(Device001), redis.print);
+    client.hset('realtime', 'Device002', JSON.stringify(Device002), redis.print);
 
 
 
