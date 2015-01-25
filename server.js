@@ -27,15 +27,26 @@
             '$KIPYO,Device002,YYYY5'
         ]
     };
-
-
-    client.hset('realtime', 'Device001', 
-                JSON.stringify(Device001), redis.print);
-    client.hset('realtime', 'Device002', 
-                JSON.stringify(Device002), redis.print);
-
-    client.hgetall('realtime', function(err, result){
+    
+    
+    client.hget('Device003', function(err, result){
         if(err) throw err;
         console.log(result);
     });
+
+    function tracking(id, sentence, cb){
+        client.hget(id, function(err, result){
+            if(err) throw err;
+            
+            var device = JSON.parse(result);
+            device.logs.push(sentence);
+            
+            client.hset('realtime', id,  JSON.stringify(device), redis.print);
+        });
+    }
+
+ /*setTimeout(function(){
+        tracking('Device001', '$KIPYO,Device001,XXXX1');
+    
+    }, 5000);*/
 
