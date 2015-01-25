@@ -14,7 +14,7 @@
     sample.init(client);
     
     var id = 'DEVICE1';
-    setTimeout(function(){
+    setInterval(function(){
         sample.update(id, dummySentence(id));
         console.log(id + ' UPDATED');
     }, 3000);
