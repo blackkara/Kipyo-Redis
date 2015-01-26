@@ -6,4 +6,4 @@ Basic and simple scenario is, server listens incoming requests and saves to data
 
 For this solution, using redis as temporarily storage might decrease the db operations. Firstly we have to change the scenario, server accepts requests from devices then stores to redis, not saves to database directly <br />
 
-While devices are sending data to server every N seconds periodically, the server must be collecting all data from redis and saving to db (bulk operation)
+While devices are sending data to server every N seconds periodically, the server must be collecting all data from redis and saving to db, every X seconds periodically (bulk operation)
