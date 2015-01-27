@@ -1,6 +1,7 @@
 
 var cluster = require('cluster');
 var numCPUs = require('os').cpus().length;
+console.log('CPU length : ' + numCPUs);
 
 if (cluster.isMaster) {
     
