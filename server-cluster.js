@@ -14,8 +14,8 @@ if (cluster.isMaster) {
     
 } else {
   
-  /*var redis = require("redis");
-  var client = redis.createClient();*/
+  var redis = require("redis");
+  var client = redis.createClient();
     
   var MAX_PERIOD = 2000;
   var MIN_PERIOD = 1000;
