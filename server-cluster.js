@@ -45,7 +45,7 @@ function sendToRedis(hashKey, deviceId, sentence){
             var device;
             
             if(!result){
-                device = { sentence: sentence, logs: [sen]};
+                device = { sentence: sentence, logs: [sentence]};
             } else {
                 device = JSON.parse(result);
                 device.sentence = sentence;
