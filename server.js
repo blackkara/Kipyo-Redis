@@ -8,6 +8,11 @@
 
 
     sample.init(client);
+
+
     setInterval(function(){
         sample.simulateTracking();
-    }, 2000);
+    }, 1500);
+
+
+    
