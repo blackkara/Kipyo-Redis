@@ -17,8 +17,8 @@ if (cluster.isMaster) {
   var redis = require("redis");
   var client = redis.createClient();
     
-  var MAX_PERIOD = 2000;
-  var MIN_PERIOD = 1000;
+  var MAX_PERIOD = 5000;
+  var MIN_PERIOD = 2000;
   var HASH_KEY = 'REALTIME';
   var SENTENCE = '';
     
@@ -37,7 +37,7 @@ if (cluster.isMaster) {
 }
 
 
-function sendToRedis(hashKey, deviceId, sen){
+function sendToRedis(hashKey, deviceId, sentence){
     
     client.hget(hashKey, deviceId, function(err, result){
             if(err) throw err;
